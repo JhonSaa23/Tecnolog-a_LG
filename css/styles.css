@@ -1,0 +1,473 @@
+@font-face {
+    font-family: font-titulo;
+    src: url(../src/fonts/LG\ EI\ Headline/LG\ EI_Headline\ Regular.otf);
+    
+}
+@font-face {
+    font-family: font-text;
+    src: url(../src/fonts/LG\ EI\ Headline/LG\ EI_Headline\ Light.otf);
+
+}
+:root {
+    --color-body: #f6f3eb;
+    --color-card: #f0ece4;
+    --color-hover-boton: #fd312e;
+    --color-fuente-h1: #1b1b1b;
+    --color-fuente-2P: #1a1a1a;
+    --fuente-h1: "font-titulo";
+    --fuente-text: "font-text";
+    --fondo-boton: rgba(0, 0, 0, 0.5);
+}
+button {
+    border: none;
+    cursor: pointer;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: .2s;
+}
+
+h1 {
+    width: 600px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    font-family: var(--fuente-h1);
+    font-weight: 500;
+    font-size: 27px;
+    background-color: var(--color-card);
+    border-radius: 50px;
+}
+
+h2,h3 {
+   font-family: var(--fuente-text);
+   font-size: 28px;
+   font-weight: 500;
+}
+
+p {
+    font-family: var(--fuente-text);
+    font-size: 20px;
+}
+
+a {
+    font-family: var(--fuente-text);
+    font-size: 18px;
+    color: var(--color-fuente-2P);
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+
+main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: var(--color-body);
+}
+
+.container {
+    max-width: 1200px;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    margin: auto;
+}
+
+.televisores {
+    gap: 20px;
+    display: grid;
+    width: 100%;
+    text-align: center;
+    color: var(--color-fuente-2P);
+}
+
+.grid-tvs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.tv {
+    max-width: 600px;
+    background-color: var(--color-card);
+    padding: 20px;
+    border-radius: 10px;
+}
+.tv p {
+    margin: 5px 0;
+}
+.tv img {
+    max-width: 100%;
+    max-height: 200px;
+    height: auto;
+    object-fit: contain;
+}
+
+.tv .btn {
+    width: 200px;
+    height: 45px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #e6e1d6;
+    border-radius: 25px;
+    transition: .2s;
+}
+
+.tv .btn:hover {
+    background-color: var(--color-hover-boton);
+    color: var(--color-body);
+}
+
+/* Transiciones suaves */
+.fade-in {
+    animation: fadeIn 1s forwards;
+}
+
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/**************** Detalles ****************/
+#details {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.background_img {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/**************** content-details ****************/
+.content-details {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}   
+
+/**************** back-header ****************/
+.back-header {
+    position: relative;
+    top: -325px;
+    display: flex;
+    justify-content: center;
+}
+#backBtn {
+    background-color: var(--fondo-boton);
+    width: 150px;
+    color: var(--color-body);
+    border-radius: 50px;
+    border: none;
+    height: 56.25px;
+    justify-content: center;
+    left: -480px;
+
+    align-items: center;
+    display: flex;
+    font-size: 22px;
+    position: absolute;
+    cursor: pointer;
+    transition: .2s;
+}
+#backBtn:hover {
+    background-color: var(--color-hover-boton);
+}
+#backBtn svg {
+    margin-right: 10px;
+}
+.title-details {
+    background-color: var(--color-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 50px;
+    margin: auto;
+    width: 780px;
+    height: 100px;
+}
+.title-details h2 {
+    color: var(--color-hover-boton);
+    font-weight: 900;
+    font-size: 25px;
+}
+.title-details p {
+    color: var(--color-fuente-2P);
+    font-weight: 100;
+    font-size: 22px;
+}
+
+
+/**************** Slider ****************/
+.slides {
+    width: 736px;
+    position: absolute;
+    height: 640px;
+    margin-top: 20px;
+}
+
+.slide.active {
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+}
+.slide {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.info-boxes{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.titulo-tv {
+    position: absolute;
+    height: 100px;
+    top: 0;
+}
+.titulo-tv h3 {
+    background-color: var(--color-card);
+    width: 150px;
+    height: 40px;
+    display: flex;
+    font-size: 23px;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px 20px 0 0;
+    margin: auto;
+}
+.titulo-tv p {
+    background-color: var(--fondo-boton);
+    color: var(--color-body);
+    width: 520px;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    margin: auto;
+}
+
+
+/******************************************/
+.fondo-white{
+    width: calc(100% - 55px - 20px);
+    height: 0;
+    overflow: hidden;
+    background-color: var(--color-card);
+    text-align: left;
+    padding: 0 15px;
+    border-radius: 5px;
+}
+.prueba .fondo-white{
+    height: max-content;
+    padding: 15px;
+}
+.fondo-white h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.fondo-white p {
+    font-size: 16px;
+    color: #636363;
+}
+.content-img-boxes {
+    width: auto;
+    height: auto;
+    display: flex;
+    position: relative;
+}
+
+.info-box{
+    position: absolute;
+    display: flex;
+}
+
+.info-box svg, .info-box img{
+    cursor: pointer;
+    width: 55px;
+    height: 55px;
+    margin: 0 10px;
+    background-color: var(--fondo-boton);
+    border-radius: 5px;
+    padding: 5px;
+    fill: #ddd;
+}
+.info-box svg:hover ,button:hover{
+    background-color: var(--color-hover-boton);
+    color: var(--color-body);
+    fill: var(--color-body);
+    transition: .2s;
+}
+.info-box img{
+    background-color: transparent;
+    padding: 0;
+}
+.technology, .processor{
+    width: 450px;
+    top: 15px;
+    right: 100%;
+    justify-content: end;
+}
+.processor{
+    top: calc(100% - 91px);
+}
+.size{
+    width: max-content;
+    top: unset;
+    top: 15px;
+    left: 100%;
+}
+.user-type{
+    width: 400px;
+    left: 110%;
+    top: 45%;
+}
+.prices {
+    width: 350px;
+    left: 110%;
+    height: auto;
+    top: 77%;
+    bottom: 20px;
+}
+.slide img {
+    max-width: 800px;
+    max-height: 100%;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.info-box .moneda-hover{
+    background-color: var(--fondo-boton);
+    padding: 3px;
+}
+
+/* buttons-container */
+.buttons-container {
+    bottom: -270px;
+    position: relative;
+    z-index: 1;
+}
+
+.buttons-container button {
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons-container .mascat{
+    background-color: var(--fondo-boton);
+    color: var(--color-body);
+    padding: 8px 30px;
+    font-size: 18px;
+}
+
+.static-buttons {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.buttons-container button svg {
+    width: 20px;
+    height: 20px;
+}
+.additional-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.additional-buttons .m-v {
+    width: 192.5px;
+    height: 50px;
+}
+
+/* Agrega el CSS para el popup */
+.video-popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.video-popup-content {
+    background-color: #fefefe;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 95%;
+    height: 95%;
+}
+.videoFrame {
+    width: 100%;
+    height: 94%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
