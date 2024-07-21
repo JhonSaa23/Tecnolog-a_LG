@@ -77,9 +77,14 @@ document.addEventListener('click',()=>{
 });
 
 const videoUrls = {
-    0: 'https://www.youtube.com/embed/r7GBGZ004vQ?si=nSjWplNJoaVoU5T8',
-    1: 'https://www.youtube.com/embed/YUXH2DqVOC8?si=jUAWSpEPyNHygh9G',
-    // Agrega más URLs según sea necesario
+    0: 'https://www.youtube.com/embed/videoID1',
+    1: 'https://www.youtube.com/embed/videoID1',
+    2: 'https://www.youtube.com/embed/videoID1',
+    3: 'https://www.youtube.com/embed/videoID1',
+
+    // **************************************************
+    // Agrega más URLs según sea necesario en relacion de los tipos de televisores 
+    //**************************************************
 };
 
 const videoPopup = document.getElementById('videoPopup');
@@ -118,7 +123,7 @@ window.onclick = function(event) {
             pop.classList.remove('pepe');
         })
         videoPopup.style.display = 'none';
-        videoFrame.src = ''; // Detiene la reproducción del video al cerrar el popup
+        videoFrame.src = '';
     }
 }
 
