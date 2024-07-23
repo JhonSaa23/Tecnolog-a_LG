@@ -18,6 +18,16 @@
     --fuente-text: "font-text";
     --fondo-boton: rgba(0, 0, 0, 0.5);
 }
+#scale-container {
+    width: 1920px;
+    height: 1080px;
+    transform-origin: 0 0; /* Escala desde la esquina superior izquierda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
 button {
     border: none;
     cursor: pointer;
@@ -168,6 +178,9 @@ main {
     object-fit: cover;
     z-index: -1;
 }
+.background_img img {
+    width: 100%;
+}
 
 /**************** content-details ****************/
 .content-details {
@@ -177,6 +190,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transform: scale(1.1);
 }   
 
 /**************** back-header ****************/
@@ -470,4 +484,19 @@ main {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    body {
+        transform: rotate(90deg);
+        width: 100vh; /* Usar la altura de la pantalla para el ancho */
+        height: 100vw; /* Usar el ancho de la pantalla para la altura */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+    .content-details {
+        transform: scale(1.6);
+    }
 }
