@@ -104,7 +104,7 @@ function showVideoPopup(numberTv) {
     const videoUrl = videoUrls[numberTv];
     if (videoUrl) {
         videoPopup.classList.add('pepe');
-        videoPopup.style.display = 'block';
+        videoPopup.style.display = 'flex';
         videoFrame.src = videoUrl;
     } else {
         console.error("No video URL found for slide:", currentSlide);

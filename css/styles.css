@@ -450,6 +450,8 @@ main {
 .video-popup {
     display: none;
     position: fixed;
+    justify-content: center;
+    align-items: center;
     z-index: 9999;
     left: 0;
     top: 0;
@@ -461,22 +463,26 @@ main {
 
 .video-popup-content {
     background-color: #fefefe;
-    margin: 20px auto;
-    padding: 20px;
     border: 1px solid #888;
-    width: 95%;
-    height: 95%;
+    width: 80%;
+    height: 80%;
 }
 .videoFrame {
     width: 100%;
-    height: 94%;
+    height: 100%;
 }
 
 .close {
-    color: #aaa;
+    color: #fff;
     float: right;
-    font-size: 28px;
+    width: 50px;
+    font-size: 41px;
     font-weight: bold;
+    position: absolute;
+    right: 147px;
+    border: 1px solid;
+    border-radius: 51px;
+    padding: 1px 10px;
 }
 
 .close:hover,
