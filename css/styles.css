@@ -497,9 +497,9 @@ main {
         transform: translate(-50%, -50%) rotate(90deg);
     }
     .content-details {
-        transform: scale(1.7);
+        transform: scale(1.85);
     }
     .container {
-        transform: scale(1.8);
+        transform: scale(2);
     }
 }
