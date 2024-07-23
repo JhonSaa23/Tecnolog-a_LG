@@ -93,7 +93,6 @@ main {
     justify-content: center;
     z-index: 1;
     margin: auto;
-    transform: scale(1.7);
 }
 
 .televisores {
@@ -499,5 +498,8 @@ main {
     }
     .content-details {
         transform: scale(1.7);
+    }
+    .container {
+        transform: scale(1.8);
     }
 }
